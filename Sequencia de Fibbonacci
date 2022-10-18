@@ -1,0 +1,12 @@
+número=int(input())
+i=1
+j=0
+if número>1:
+    print(i, end=" ")
+    while i+j<número:
+        print(i+j, end=" ")
+        i1=i
+        i=i+j
+        j=i1
+else:
+    print()
