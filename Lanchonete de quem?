@@ -1,0 +1,20 @@
+nopções=int(input())
+Cardapio={}
+valor=0
+for i in range(nopções):
+    código=int(input())
+    descrição=input()
+    preço=float(input())
+    Cardapio[código]= [descrição,preço]
+while True:
+  códigodepedido=int(input())
+  if códigodepedido in Cardapio:
+    p=Cardapio[códigodepedido]
+    quantidade=int(input())
+    valor+=float(p[1])*quantidade
+  elif códigodepedido==0:
+      break
+  else:
+      print("Pedido inválido")
+
+print("{:.2f}".format(valor))
