@@ -1,0 +1,52 @@
+#-----------------------------------~=
+produtos={}
+produtos["706"]=["Abacaxi", "221.75"]
+produtos["703"]=["Banana", "193.78"]
+produtos["701"]=["Cafe", "123.09"]
+produtos["708"]=["Caju", "173,98"]
+produtos["702"]=["Laranja", "179.53"]
+produtos["705"]=["Melancia", "249.51"]
+produtos["700"]=["Soja", "163.43"]
+produtos["704"]=["trigo", "156.66"]
+produtos["707"]=["Carne bovina", "457.85"]
+produtos["709"]=["Carne suína", "376.91"]
+#-----------------------------------~=
+continentes={}
+continentes["Africa"]="250.00"
+continentes["America"]="150.00"
+continentes["Asia"]="450.00"
+continentes["Europa"]="300.00"
+continentes["Oceania"]="400.00"
+#-----------------------------------~=
+def Negociação():
+    return f"{Comprador} \n{País} \n{p[0]} \nValor do produto: U$ {Valbruto:.2f} \nValor do frete: U$ {frete:.2f}\nValor total: U$ {Valtotal:.2f}"
+#-----------------------------------~=
+nExportações=int(input())
+if nExportações<=0:
+    print("Sem negociacoes por hoje")
+else:
+    for i in range(nExportações):
+        Comprador=str(input())
+        País=str(input())
+        cont=str(input())
+        if cont in continentes:
+            c=continentes[cont]
+        elif cont not in continentes:
+            print("Operacao invalida!")
+            break
+        Id=input()
+        if Id in produtos:
+            p=produtos[Id]
+        elif Id not in produtos:
+            print("Operacao invalida!")
+            break
+        Lotes=int(input())
+        if Lotes>0:
+            prç=float(p[1])
+            frete=float(c)
+            Valbruto=(Lotes*prç)/5.17
+            Valtotal=Valbruto+frete
+            print(Negociação())
+        if Lotes<=0:
+            print("Operacao invalida!")
+            break
