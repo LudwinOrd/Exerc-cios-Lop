@@ -1,0 +1,43 @@
+def SumMatriz(a,b):
+  m3=[]
+  for i in range(linhas):
+    linhas3=[]
+    for j in range(colunas):
+      linha=a[i][j]+b[i][j]
+      linhas3.append(linha)
+    m3.append(linhas3)
+  return m3
+  
+def ImprMatriz(a):
+    for i in range(len(a)):
+        for j in range(len(a[0])):
+            if i<=linhas and j<=colunas:
+                print(a[i][j], end=" ")
+            else:
+                break
+        print(end="\n")
+    return exit()
+    
+n=input()
+n1=n.split(" ")
+linhas=int(n1[0])
+colunas=int(n1[1])
+matriz1=[]
+matriz2=[]
+if 1<=linhas<=20 and 1<=colunas<=20:
+    for i1 in range(linhas):
+        l1=input()
+        l11=l1.split(" ")
+        lin1=[]
+        for item in range(len(l11)):
+            lin1.append(int(l11[item]))
+        matriz1.append(lin1)
+    for i2 in range(linhas):
+        l2=input()
+        l22=l2.split(" ")
+        lin2=[]
+        for item in range(len(l22)):
+            lin2.append(int(l22[item]))
+        matriz2.append(lin2)
+M3=SumMatriz(matriz1,matriz2)
+print(ImprMatriz(M3))
