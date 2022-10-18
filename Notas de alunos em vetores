@@ -1,0 +1,43 @@
+n=int(input())
+Aprov= []
+Rec=[]
+Rep= []
+i=1
+while i<=n:
+    m=input()
+    m=m.split(" - ")
+    a= int(m[0])
+    média= float(m[1])
+    if média>=7.0:
+        Aprovados=("%i (%.1f)" %(a,média))
+        Aprov.append(Aprovados)
+        i+=1
+    elif 7>média>=5.0:
+        Recuperação=("%i (%.1f)" %(a,média))
+        Rec.append(Recuperação)
+        i+=1
+    elif média<5:
+        Reprovados=("%i (%.1f)" %(a,média))
+        Rep.append(Reprovados)
+        i+=1
+print("Aprovados:", end=" ")
+while len(Aprov)>0:
+    if len(Aprov)>1:
+        print(Aprov.pop(0), end=", ")
+    if len(Aprov)==1:
+        print(Aprov.pop(0))
+        break
+print("Recuperação:", end=" ")
+while len(Rec)>0:
+    if len(Rec)>1:
+        print(Rec.pop(0), end=", ")
+    if len(Rec)==1:
+        print(Rec.pop(0))
+        break
+print("Reprovados:", end=" ")
+while len(Rep)>0:
+    if len(Rep)>1:
+        print(Rep.pop(0), end=", ")
+    if len(Rep)==1:
+        print(Rep.pop(0))
+        break
