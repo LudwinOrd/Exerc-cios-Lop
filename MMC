@@ -1,0 +1,23 @@
+n=input()
+numeros=n.split(" ")
+num1=numeros[0]
+num2= numeros[1]
+v1=int(num1)
+v2=int(num2)
+mmc=1
+i=2
+while True:
+  while v1%i==0:
+    v1=v1//i
+    mmc*=i
+    if v2%i==0:
+      v2=v2//i
+  while v2%i==0:
+    v2=v2//i
+    mmc*=i
+    if v1%i==0:
+      v1=v1//i
+  i+=1
+  if v1==1 and v2==1:
+    break
+print("O mmc de {} e {} é {}".format(num1,num2,mmc))
